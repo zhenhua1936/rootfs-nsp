@@ -8,7 +8,7 @@ export set HOME=/root
 #export set QTDIR=/opt/Qtopia
 #export set QPEDIR=/opt/Qtopia
 #export set KDEDIR=/opt/kde
-export set QWS_KEYBOARD="TTY:/dev/tty1"
+#export set QWS_KEYBOARD="TTY:/dev/tty1"
 if [ -f /sys/devices/virtual/input/input1/uevent ] ; then
 	export set TSLIB_TSDEVICE=/dev/event1
 	export set TSLIB_CALIBFILE=/etc/pointercal
@@ -18,7 +18,7 @@ if [ -f /sys/devices/virtual/input/input1/uevent ] ; then
 else
 	export set QWS_MOUSE_PROTO="USB:/dev/mouse0"
 fi
-export PATH=$QPEDIR/bin:$PATH:bin:/usr/bin
+export PATH=$QPEDIR/bin:$PATH
 export LD_LIBRARY_PATH=$QTDIR/lib:$QPEDIR/lib:/lib
 
 USER="`id -un`"

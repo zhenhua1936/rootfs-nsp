@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 runlevel=S
 prevlevel=N
 umask 022
@@ -37,12 +37,13 @@ hwclock -s
 
 #insmod /lib/ov9650.ko
 #insmod /lib/camera.ko
-modprobe zd1211rw
-modprobe rt73usb
-modprobe rt5370sta
+#modprobe zd1211rw
+#modprobe rt73usb
+#modprobe rt5370sta
 
 ifconfig lo 127.0.0.1
-# net_set &
+ifconfig eth0 192.168.1.20
+net_set &
 
 # /etc/rc.d/init.d/leds start
 # /etc/rc.d/init.d/netd start

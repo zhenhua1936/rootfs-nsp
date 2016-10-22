@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mjpg_streamer -i "/lib/WebCam/input_cmoscamera.so -r 320x256" -o "/lib/WebCam/output_http.so -w 192.168.1.6:8080"
